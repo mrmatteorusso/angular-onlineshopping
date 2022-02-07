@@ -1,0 +1,9 @@
+#main-nav {
+  background-color: rgb(255, 79, 102);
+}
+#main-nav a {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0.5rem 0.75rem;
+  color: rgb(29, 23, 23);
+}

@@ -1,0 +1,11 @@
+.cockies-notification {
+  background-color: #999999;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}

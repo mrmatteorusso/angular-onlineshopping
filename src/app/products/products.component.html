@@ -1,0 +1,10 @@
+<div class="main-container">
+    <app-counters [numTotalProducts]="getNumTotalProducts()" [numAvailableProducts]="getNumAvailableProducts()">
+    </app-counters>
+    <ul *ngFor="let product of products">
+        <app-product [product]="product" (chosenProduct)="showPotentialBuy($event)"></app-product>
+
+    </ul>
+</div>
+
+<app-form></app-form>

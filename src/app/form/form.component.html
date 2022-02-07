@@ -1,0 +1,30 @@
+<div class="form-container">
+    <div class="form-description-container">
+        <h3>How to contact us</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores natus nesciunt exercitationem mollitia
+            expedita fugit dolorem corporis. Nisi recusandae qui voluptate cum totam quos quibusdam provident non ipsam
+            error! Eos explicabo, nobis dolores vero quisquam quam nihil quia consequuntur quasi deleniti eligendi modi
+            labore doloribus dolorum doloremque repellendus! Distinctio, ut!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptates, non odit pariatur, tempore
+            consectetur recusandae quod autem porro itaque atque repellendus. Ipsam soluta vero nam totam omnis sunt
+            reiciendis. Eum labore earum recusandae numquam. Fugit dolorem officiis omnis nemo laudantium, saepe
+            repellendus iure aperiam dicta dolorum perferendis! Animi quae vel voluptate aperiam, quam repudiandae saepe
+            ipsum, architecto perferendis aut accusantium nobis tempore sed, fugiat nesciunt vitae ullam velit accusamus
+            libero aliquid deserunt autem rerum ratione. Exercitationem nam voluptatibus consequatur rem nesciunt
+            facilis ab asperiores laudantium unde natus illum eligendi possimus corporis iure reprehenderit, earum
+            numquam fugiat, iusto veritatis suscipit.</p>
+    </div>
+    <!-- <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)"> -->
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+        <h3>Please contact us</h3>
+        <input type="text" ngModel name="name" placeholder="Your Name">
+        <input type="text" ngModel name="surname" placeholder="Your Surnmae">
+        <input type="number" ngModel name="number" required placeholder="Your Card Number">
+        <input type="email" ngModel name="email" required email placeholder="Your Email">
+        <textarea name="" id="" cols="30" rows="10" ngModel name="teaxtarea"
+            placeholder="Please enter your request here"></textarea>
+        <button type="submit" [disabled]="myForm.invalid" routerLink="formMessage">Sumbit</button>
+    </form>
+
+</div>
+<!-- <input type="number" ngModel name="number" required *ngIf="input.value >0? 'input.valid': 'number.invalid'"> -->

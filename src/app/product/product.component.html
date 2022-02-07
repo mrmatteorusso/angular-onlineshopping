@@ -1,0 +1,24 @@
+<div class="product-container">
+    <div class="image-container">
+        <img [src]="product.image" alt="" style="max-height: 50px">
+    </div>
+    <div class="text-container">
+        <div class="product-title">
+            <div>
+                <h3>{{product.title}}</h3>
+            </div>
+        </div>
+        <div class="product-details">
+            <div [ngStyle]="{'color': product.available === 'yes'? 'rgb(55, 95, 55)' : 'red' }">Availability:
+                {{product.available}}</div>
+            <div>Price: {{product.price}}</div>
+            <div>Color: <span>{{product.color}}</span></div>
+        </div>
+    </div>
+    <div class="action-container">
+        <button type="button" id="details-button">Show Details</button>
+        <button type="button" id="buy-button" [disabled]="product.available === 'no'" (click)="buyNow(product)"
+            routerLink="cart">Buy
+            Now</button>
+    </div>
+</div>
