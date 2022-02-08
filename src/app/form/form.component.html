@@ -14,17 +14,20 @@
             facilis ab asperiores laudantium unde natus illum eligendi possimus corporis iure reprehenderit, earum
             numquam fugiat, iusto veritatis suscipit.</p>
     </div>
-    <!-- <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)"> -->
+
+
+
     <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
         <h3>Please contact us</h3>
         <input type="text" ngModel name="name" placeholder="Your Name">
         <input type="text" ngModel name="surname" placeholder="Your Surnmae">
         <input type="number" ngModel name="number" required placeholder="Your Card Number">
         <input type="email" ngModel name="email" required email placeholder="Your Email">
-        <textarea name="" id="" cols="30" rows="10" ngModel name="teaxtarea"
-            placeholder="Please enter your request here"></textarea>
-        <button type="submit" [disabled]="myForm.invalid" routerLink="formMessage">Sumbit</button>
+        <textarea cols="30" rows="10" ngModel name="teaxtarea" placeholder="Please enter your request here"></textarea>
+        <button type="submit" [disabled]="myForm.invalid">Sumbit</button>
     </form>
 
+
+
+
 </div>
-<!-- <input type="number" ngModel name="number" required *ngIf="input.value >0? 'input.valid': 'number.invalid'"> -->
