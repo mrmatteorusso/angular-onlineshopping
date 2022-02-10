@@ -13,6 +13,7 @@ import { CustomersListComponent } from './customers-list/customers-list.componen
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart/cart.component';
 import { FormMessageComponent } from './form-message/form-message.component';
+import { ProductsService } from './shared/products.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { FormMessageComponent } from './form-message/form-message.component';
     FormMessageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
