@@ -1,10 +1,13 @@
 <div class="main-container">
-    <app-counters [numTotalProducts]="getNumTotalProducts()" [numAvailableProducts]="getNumAvailableProducts()">
+    <app-counters [numTotalProducts]="getNumTotalProducts()" [numAvailableProducts]="getNumAvailableProducts()"
+        (filterRadioButtonSelectionChanged)="onFilterRadioButtonChanged($event)">
     </app-counters>
-    <ul *ngFor="let product of products">
-        <app-product [product]="product" (chosenProduct)="showPotentialBuy($event)"></app-product>
-
-    </ul>
+    <ng-container *ngFor="let product of products">
+        <ul
+            *ngIf="productCountRadioButton === 'total'?  productCountRadioButton === 'total': product.available === 'yes' ">
+            <app-product [product]="product" (chosenProduct)="showPotentialBuy($event)"></app-product>
+        </ul>
+    </ng-container>
 </div>
 
 <app-form></app-form>

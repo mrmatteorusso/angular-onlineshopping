@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-counters',
@@ -12,4 +12,12 @@ export class CountersComponent implements OnInit {
 
   @Input() numTotalProducts: number = 0;
   @Input() numAvailableProducts: number = 0;
+  selectRadioButtonValue: string = 'total';
+
+  @Output()
+  filterRadioButtonSelectionChanged: EventEmitter<string> = new EventEmitter<string>();
+  onRadioButtonSelectionChanged() {
+    this.filterRadioButtonSelectionChanged.emit(this.selectRadioButtonValue);
+    console.log(this.selectRadioButtonValue);
+  }
 }

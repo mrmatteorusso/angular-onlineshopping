@@ -29,8 +29,12 @@ export class ProductsComponent implements OnInit {
   }
 
   getNumAvailableProducts() {
-    return this.products.filter(
-      (product: { available: string }) => product.available === 'yes'
-    ).length;
+    return this.products.filter((item) => item.available === 'yes').length;
+  }
+
+  productCountRadioButton: string = 'total';
+  onFilterRadioButtonChanged(data: string) {
+    this.productCountRadioButton = data;
+    console.log(this.productCountRadioButton);
   }
 }

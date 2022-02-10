@@ -3,3 +3,12 @@
   display: flex;
   justify-content: space-around;
 }
+
+.action-container {
+  display: flex;
+  align-items: center;
+}
+
+.action-element {
+  margin: 0.5rem;
+}
