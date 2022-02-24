@@ -1,6 +1,6 @@
 import { product } from './../model/product';
 import { ProductsService } from './../shared/products.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-products',
@@ -9,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   products: product[] = [];
+  potentialProduct: product[] = []; //think options when it is an array of different objects
+  // selectedPotentialProduct: product[] = [];
+  // @Output()
+  // potentialProductEmitter = new EventEmitter();
 
   constructor(private ProductsService: ProductsService) {}
+  productCountRadioButton: string = 'total';
 
   ngOnInit(): void {
     this.getInfoFromService();
@@ -21,7 +26,7 @@ export class ProductsComponent implements OnInit {
   }
 
   showPotentialBuy(product: any) {
-    console.log(product);
+    this.potentialProduct = product;
   }
 
   getNumTotalProducts() {
@@ -32,9 +37,11 @@ export class ProductsComponent implements OnInit {
     return this.products.filter((item) => item.available === 'yes').length;
   }
 
-  productCountRadioButton: string = 'total';
   onFilterRadioButtonChanged(data: string) {
     this.productCountRadioButton = data;
     console.log(this.productCountRadioButton);
   }
+  // exportingPotentialProduct() {
+  //   this.potentialProductEmitter.emit(this.selectedPotentialProduct);
+  // }
 }

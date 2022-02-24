@@ -6,13 +6,16 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./counters.component.css'],
 })
 export class CountersComponent implements OnInit {
+  selectRadioButtonValue: string = 'total';
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  @Input() numTotalProducts: number = 0;
-  @Input() numAvailableProducts: number = 0;
-  selectRadioButtonValue: string = 'total';
+  @Input()
+  numTotalProducts: number = 0;
+  @Input()
+  numAvailableProducts: number = 0;
 
   @Output()
   filterRadioButtonSelectionChanged: EventEmitter<string> = new EventEmitter<string>();

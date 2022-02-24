@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart/cart.component';
 import { FormMessageComponent } from './form-message/form-message.component';
 import { ProductsService } from './shared/products.service';
+import { CartItemsService } from './shared/cart-items.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ProductsService } from './shared/products.service';
     FormMessageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
-  providers: [ProductsService],
+  providers: [ProductsService, CartItemsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
